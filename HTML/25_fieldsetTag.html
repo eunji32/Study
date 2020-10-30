@@ -1,0 +1,35 @@
+<!-- 
+	* fieldset & legend 태그
+	  - 입력 양식을 설명하는 태그.
+	  - legend 태그는 fieldset 태그안에서만 사용할 수 있음.
+	     -> 다른 곳에서 쓸 수 있지만 아무 효과가 없다.
+ -->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fieldset & legend 태그</title>
+</head>
+<body>
+	
+	<form action="">
+		<fieldset>
+			<legend>로그인</legend>
+			<table>
+				<tr>
+					<td><lable for="id">아이디</lable></td>
+					<td><input type="text" id="id" /></td>
+				</tr>
+				<tr>
+					<td><lable for="pw">비밀번호</lable></td>
+					<td><input type="password" id="pw"/></td>
+				</tr>
+			</table>
+			
+			<input type="submit" value="로그인">
+		</fieldset>
+	</form>
+
+</body>
+</html>
