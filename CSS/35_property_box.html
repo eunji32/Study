@@ -1,0 +1,57 @@
+﻿<!--
+	* 박스 속성
+		- 웹페이지의 레이아웃을 구성할 때 가장 중요한 스타일 속성.
+		- width/height 속성
+			. 글자를 감싸는 영역의 크기를 지정하는 속성.
+		- margin/padding 속성
+			. margin:마진의 너비를 지정하는 속성.
+			. padding: 패딩의 너비를 지정하는 속성.
+		- border 속성
+		- box-sizing 속성
+			. width 속성과 height 속성이 차지하는 범위를 지정.
+			. 종 류
+				- content-box:기본으로 적용되는 키워드.
+				- border-box:width/height 속성이 테두리를 포함한 영역의 크기를 지정.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 속성</title>
+  
+<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		
+		border:10px solid black;  /* 두께 모양 색상 */
+		padding:10px 20px 30px 40px; /* 상 우 하 좌 (시계방향)*/
+		padding:0 10px; /* 상하  좌우 */
+		padding:10px; /* 상하좌우(전체) */
+
+		/* margin:5px 10px 15px 20px; */		
+		margin-top:5px;
+		margin-right:10px;
+		margin-bottom:15px;
+		margin-left:20px;
+	}	
+	
+	div:first-child{
+		background:red;
+		box-sizing:content-box; /* default */
+	}
+	
+	div:last-child{
+		background:green;
+		box-sizing:border-box;  
+	}
+</style>
+  
+</head>
+
+<body>
+	<div>홍길동</div>
+	<div>이순신</div>
+</body>
+</html>

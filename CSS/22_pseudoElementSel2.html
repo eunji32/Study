@@ -1,0 +1,46 @@
+﻿<!-- 
+	* 문자선택자
+		- 전후문자선택자
+			. 특정 태그의 전후에 위치하는 공간을 선택하는 선택자.
+			. content 스타일 속성을 입력할 수 있다(전후문자선택자에서만 사용할 수 있다).
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전후문자선택자</title>
+
+<style type="text/css">
+	p{counter-increment:cnt;} /* cnt라는 변수 선언 *//* 증가시키면서 카운트 */
+	
+	/* p를 만날 때마다 숫자를 늘려가며 p앞에 순번부여 */
+	 p::before{content:counter(cnt) ".";} /* content는 before나 after에서만 사용가능. */
+	
+	/* 끝나는 p태그 자리에 '-속성값page' 가 출력됨  */
+	 p::after{content:"-" attr(data-page) "page";}
+	
+	p::first-letter {font-size:3em; color:red;}}
+	
+	
+</style>
+
+</head>
+<body>
+	<h1>Lorem ipsum dolor sit amet</h1>
+	<p data-page="77">Lorem Ipsum is simply dummy text of the printing
+		and typesetting industry. Lorem Ipsum has been the industry's standard
+		dummy text ever since the 1500s, when an unknown printer took a galley
+		of type and scrambled it to make a type specimen book. It has survived
+		not only five centuries, but also the leap into electronic
+		typesetting, remaining essentially unchanged. It was popularised in
+		the 1960s with the release of Letraset sheets containing Lorem Ipsum
+		passages, and more recently with desktop publishing software like
+		Aldus PageMaker including versions of Lorem Ipsum.</p>
+	<p data-page="345">The standard chunk of Lorem Ipsum used since the
+		1500s is reproduced below for those interested. Sections 1.10.32 and
+		1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+		reproduced in their exact original form, accompanied by English
+		versions from the 1914 translation by H. Rackham.</p>
+</body>
+</html>

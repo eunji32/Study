@@ -1,0 +1,45 @@
+﻿<!--
+	* 형태구조선택자 종류
+		- :first-of-type
+				→ 형제 관계중에서 첫번째로 등장하는 특정 태그를 선택.
+		- :last-of-type
+				→  형제 관계중에서 마지막으로 등장하는 특정 태그를 선택.
+		- :nth-of-type()
+				→  앞에서 ()번째로 등장하는 특정 태그를 선택.
+		- :nth-last-of-type()
+				→  뒤에서 ()번째로 등장하는 특정 태그를 선택.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형태구조선택자</title>
+
+<style type="text/css">
+	h1:first-of-type {color:red;}
+	
+	h1:last-of-type {color:blue;}
+	
+	h2:nth-of-type(3n) {color:green;}
+
+	h3:nth-of-type(1) {color:yellow;} /* 1을 넣으면 first-of-type과 같은 결과 */
+
+
+</style>
+
+</head>
+<body>
+	
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	<h3>Header-3</h3>
+	<h2>Header-2</h2>
+	<h1>Header-1</h1>
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	
+</body>
+</html>

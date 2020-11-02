@@ -1,0 +1,33 @@
+﻿<!-- 
+	* 부정선택자
+		- 선택자를 모두 반대로 적용할 수 있게 만드는 선택자.
+		- 지금까지 사용하던 모든 선택자와 함께 사용 가능.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부정선택자</title>
+
+<style type="text/css">
+	/* input의 선택된것의 반대 */
+	input:not([type=password]){ 
+		background:red;
+	}
+	
+</style>
+
+</head>
+<body>
+	<form action="">
+		<input type="password" />
+		<input type="text" /> <br>
+		<input type="password" />
+		<input type="text" />	
+	</form>
+	
+	
+	
+</body>
+</html>

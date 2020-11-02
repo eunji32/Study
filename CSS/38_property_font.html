@@ -1,0 +1,93 @@
+﻿<!-- 
+	* 폰트 속성 : 글자와 관련된 스타일 속성.
+		1. font-size 속성
+			- 글자의 크기를 지정하는 스타일 속성.
+			    참고) h1태그의 기본크기:32px, p태그의 기본크기:16px
+		2. font-family 속성
+			- 폰트를 지정하는 스타일 속성.
+			- 일반적으로 한 단어로 이루어진 폰트는 따옴표를 사용하지 않음. 
+				하지만 두 단어 이상으로 이루어진 단어는 따옴표를 반드시 적용.
+		3. font-style 속성
+			- 폰트의 기울기 지정하는 스타일 속성.
+			- 키워드 : italic
+		4. font-weight 속성
+			- 폰트의 두께를 지정하는 스타일 속성.
+			- 키워드:700/800/900/bold...
+			- 일반 폰트 두께:400, 두꺼운 폰트 두께:700
+			- 두께를 지원하지 않는 폰트는 font-weight 속성을 사용해 두께를 조절 할 수 없다.
+		5. line-height 속성
+			- 글자의 높이를 지정.
+			- 글자를 수직 중앙 정렬할 때 사용.
+		6. text-align 속성
+			- 글자의 정렬과 관련된 스타일 속성.
+		7. text-decoration 속성
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폰트 속성</title>
+
+<style type="text/css">
+	.a{font-size : 32px;}
+	.b{font-size : 2em;}
+	.c{font-size : large;}
+	.d{font-size : small;}
+	
+	.font_arial{font-family:Arial, sans-serif;}
+	.font_roman{font-family:'Times New Roman', serif} /* 폰트이름이 2단어 이상이면 ''로 묶어줌 */
+	
+	.font_big {font-size : 2em;}
+	.font_italic{font-style: italic;} /* 기울임 */
+	.font_bold{font-weight:bold;}
+	
+	.font_center{text-align : center;}
+	.font_right{text-align: right;}
+	
+	.button{
+		width:150px; height:70px;
+		background-color:#EC96FD;
+		border:5px solid #FFFFFF;
+		border-radius : 30px;
+		
+		-webkit-box-shadow: 5px 5px 5px 5px #BFC8FF; /* 박스 그림자 */
+		box-shadow: 5px 5px 5px 5px #BFC8FF;
+	}
+	
+	.button > a { 
+		text-decoration:none; /* 밑줄 */
+		line-height:70px;
+	}
+	
+	
+</style>
+
+</head>
+<body>
+	<h1 class="font_arial">Lorem ipsum</h1>
+	<p class="font_roman">Lorem ipsum</p>
+	<p class="a">Lorem ipsum</p>
+	<p class="b">Lorem ipsum</p>
+	<p class="c">Lorem ipsum</p>
+	<p class="d">Lorem ipsum</p>
+
+	<p class="font_italic font_big font_bold">Lorem ipsum dolor amet</p>
+
+	<hr>
+	
+	<!-- line-height 속성 실습       -->
+	<div class="button font_center">
+		<a href="#" class="font_big font_italic font_bold font_center">Click</a>
+	</div>
+
+	<hr>
+
+	<h1 class="font_center">Lorem ipsum</h1>
+	<p class="font_right">2014. 12. 11</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+	<span class="font_center">Lorem ipsum</span>
+
+</body>
+</html>

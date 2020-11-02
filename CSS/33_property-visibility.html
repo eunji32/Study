@@ -1,0 +1,57 @@
+﻿<!--
+	* 가시 속성
+		- 태그가 화면에 보이는 방식을 지정하는 속성.
+		- visibility 속성
+			. visible : 태그를 보이게 만듦.
+			. hidden : 태그를 보이지 않게 만듦.
+			. collapse : table 태그를 보이지 않게 만듦.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가시속성 : visibility</title>
+
+<style type="text/css">
+	#box{
+		/* display:none; -> 태그가 화면에서 제거 */
+		visibility:hidden; /* 태그가 화면에서 보이지 않을 뿐... */
+		/* visible로 설정하면 보임.. */
+	}
+
+	table{
+		visibility:collapse;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<span>Dummy</span>
+	<div id="box">
+		<span>Lorem Ipsum is simply dummy text of the printing and 	typesetting industry.</span>
+	</div>
+	<span>Dummy</span>
+
+	<hr />
+	<p>"Lorem ipsum dolor sit amet</p>
+	<table border="1">
+		<tr>
+			<td>Test1</td>
+			<td>Test2</td>
+		</tr>
+		<tr>
+			<td>Test3</td>
+			<td>Test4</td>
+		</tr>
+		<tr>
+			<td>Test5</td>
+			<td>Test6</td>
+		</tr>
+	</table>
+	<p>"Lorem ipsum dolor sit amet</p>
+	
+</body>
+</html>

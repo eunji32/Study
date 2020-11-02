@@ -1,0 +1,32 @@
+﻿<!--  
+	* 속성선택자
+		- 특정 속성을 가진 HTML 태그를 선택할 수 있다.
+		- 다른 선택자와 함께 사용하는 선택자.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성선택자</title>
+
+<style type="text/css">
+	input[type=text]{background:red;}  /* 속성선택자 : input은 항상 type속성과 사용됨. */
+	input[type=password]{background:blue;}
+</style>
+
+</head>
+<body>
+
+	<form>
+		<input type="text" /><br /> 
+		<input type="password" /><br />
+		
+		<!-- 주의 : 기본이 text지만, 명시적으로 type을 설정하지 않으면 style은 적용되지는 않음.-->
+		<input><br> <!-- 아무 입력없이 단독사용하면 기본으로 text로 동작 -->
+		
+		 
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형태구조선택자</title>
+
+<style type="text/css">
+
+	/* body 태그의 자식 중 첫번째로 등장하는 모든 형태의 태그를 선택한다. */
+	body > *:first-of-type {color:red;} /* h1,h2,h3,h4,h5,h6의 첫번째 태그 모두선택 */
+	
+</style>
+
+</head>
+<body>
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	<h4>Header-4</h4>
+	<h5>Header-5</h5>
+	<h6>Header-6</h6>
+	<h3>Header-3</h3>
+</body>
+</html>

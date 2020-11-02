@@ -1,0 +1,46 @@
+﻿<!--  
+	* 변형 속성
+		- 애니메이션을 적용할 때 사용하는 기능.
+		- 종류
+			. transition : 모든 transition 속성을 한 번에 적용.
+			. transition-delay : 이벤트 발생 후 몇 초 후에 재생할 지 지정.
+			. transition-duration : 몇 초 동안 재생할 지 지정.
+			. transition-property : 어떤 속성을 변형할 지 지정.
+			. transition-timing-function : 수치 변형 함수를 지정.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 변형 속성</title>    
+<style type="text/css">
+ 	.box{
+ 		width:100px; height:100px;
+ 		background-color:orange;		
+ 		
+ 		/* 앞에 적도를 붙여서 사용 */
+ 		-ms-transition-duration:2s; /* 마이크로소프트 */ 
+ 		-moz-transition-duration:2s; /* 모질라 */
+ 		-webkit-transition-duration:2s; /* 웹킷 */
+ 		-o-transition-duration:2s; /* 오페라 */
+ 		transition-duration:2s; /* 서서히 커짐 */
+ 	}
+ 	
+ 	.box:hover{
+ 		width:200px;
+ 		height:200px;
+ 	}
+ 	
+ 	.box:active{
+ 		background-color:#FC8A73;
+ 	}
+ 	
+</style>
+    
+</head>
+<body>
+
+	<div class="box"></div>
+	
+</body>
+</html>

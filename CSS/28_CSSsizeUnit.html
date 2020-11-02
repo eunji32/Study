@@ -1,0 +1,58 @@
+﻿<!-- CSS 참조 사이트
+	- https://www.w3.org/TR/CSS
+	- https://w3schools.com
+-->
+
+<!-- CSS 크기 단위
+	* 퍼센트단위:%
+		- 기본 설정된 크기에서 상대적으로 크기를 지정.
+		- 참고로 100%가 초기에 설정된 크기.
+
+	* 배수단위:em
+		- 1배=1em=100%, 1.5배=1.5em=150%, 2배=2em=200%
+		- 상대적으로 크기를 지정.
+
+	* 픽셀단위:px
+		- 절대적으로 크기를 지정.
+		- p태그의 기본 font-size 속성:16px.
+ -->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 크기단위</title>
+
+<style type="text/css">
+	/* % 단위 지정 */
+	p:nth-child(1){}
+	p:nth-child(2){font-size:100%;} /* 크기변화 없음 */
+	p:nth-child(3){font-size:150%;} /* 1.5배*/
+	p:nth-child(4){font-size:200%;} /* 2배*/
+	p:nth-child(5){font-size:50%;} /* 0.5배*/
+	
+	/* em 단위 지정 */
+	p:nth-child(1){}
+	p:nth-child(2){font-size:1em;} /* 크기변화 없음 */
+	p:nth-child(3){font-size:1.5em;} /* 1.5배*/
+	p:nth-child(4){font-size:2em;} /* 2배*/
+	p:nth-child(5){font-size:0.5em;} /* 0.5배*/
+	
+	/* px(pixel) 단위 지정*/
+	p:nth-child(1){}
+	p:nth-child(2){font-size:16px;} /* 크기변화 없음 */
+	p:nth-child(3){font-size:24px;} /* 1.5배*/
+	p:nth-child(4){font-size:32px;} /* 2배*/
+	p:nth-child(5){font-size:8px;} /* 0.5배*/
+	
+</style>
+
+</head>
+<body>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</body>
+</html>
