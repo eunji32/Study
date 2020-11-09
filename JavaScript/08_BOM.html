@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>브라우저 객체 모델</title>
+<script type="text/javascript">
+// * 브라우저 객체 모델(BOM:Browser Object Model)
+//  - 웹브라우저와 관련된 객체의 집합을 의미.
+//  - window, screen, location, navigator, history, document 객체가 있다.
+
+/* 1. window 객체 
+// - 브라우저 기반 자바스크립트의 최상위 객체.
+// - alert(), prompt() 함수 모두 window 객체의 메서드.
+*/
+	
+	// window 객체의 윈도우 생성 메서드.
+	//window.open();
+	//window.open('https://www.naver.com', 'child', 'width=600, height=300', false);
+/*     var output = '';
+    for(var key in window){
+    	output += '※ '+key+':'+window[key]+'\n';
+    }
+
+    alert(output); */
+
+    //================================
+/*     var child = window.open('', '', 'width=300, height=200, menubar=yes, status=yes, toolbar=yes');
+	child.moveTo(0, 0);
+	
+	// setInterval(function(){}, 1000)  //1초가 될때마다, 정의된 함수를 호출해줌 
+	
+	setInterval(function(){
+		child.moveBy(10, 10);
+	}, 1000);
+ */
+
+//2. screen 객체 
+// - 웹브라우저의 화면이 아니라 운영체제 화면의 속성을 가지는 객체.
+
+    //window.open('https://www.naver.com', 'child', 'width=600, height=300');
+
+/* /	var output = '';
+	for(var key in screen){
+		output += '※ '+key+':'+screen[key]+'\n';
+	}
+	
+	alert(output);  */
+
+	//==============================
+    // - 브라우저의 크기를 화면에 일치하는 방법.
+    //   . 팝업창을 생성하고 전체화면으로 만듦. 이어 1초마다 크기 변환하고 이동해 점점 가운데로 수렴.
+    
+/* 	var child = window.open('', '', 'width=300, height=200');
+	
+	var width = screen.width;
+	var height = screen.height;
+	
+	child.moveTo(0, 0);
+	child.resizeTo(width, height);
+	
+	setInterval(function(){
+		child.resizeBy(-20, -20);
+		child.moveBy(10, 10);
+	}, 2000); */
+
+
+//3. location 객체  
+// - 브라우저의 주소 표시줄과 관련된 객체.
+// - 프로토콜의 종류, 호스트 이름, 문서 위치등의 정보를 가짐.
+// - 페이지를 이동할 때 많이 사용.
+/* 	
+	var output = '';
+	for(var key in location){
+		output += '※ '+key+':'+location[key]+'\n';
+	}
+	
+	alert(output); */
+	
+	// ===============================
+	// - 페이지 이동 방법 4가지
+/*  	location = 'https://www.daum.net';
+	location.href = 'https://www.daum.net';
+	
+	location.assign('https://www.daum.net');
+	location.replace('https://www.daum.net'); // 뒤로 가기 버튼을 사용할 수 없음. */
+	
+	//==========================
+	// - 현재 페이지 새로 고침을 코드로!
+/* 	location = location;
+	location.href = location.href;
+	
+	location.assign(location);
+	location.replace(location);
+	
+	location.reload();  */
+
+
+// 4. navigator 객체 
+// - 웹페이지를 실행하고 있는 브라우저에 대한 정보를 가짐.
+/* 	var output = '';
+	for(var key in navigator){
+		output += '※ '+key+':'+navigator[key]+'\n';
+	}
+	
+	alert(output);
+ */
+
+/* 5. window 객체의 onload 이벤트 속성 */
+// - window 객체가 로드가 완료되고 자동으로 할당된 함수를 실행.
+/*       window.onload = function(){
+		alert('Hello JavaScript onload Event...');
+	};  */
+	
+	
+</script>
+</head>
+<body>
+
+	<h1>Hello Window...!!!</h1>
+	<h1>Hello Window...!!!</h1>
+	
+</body>
+</html>

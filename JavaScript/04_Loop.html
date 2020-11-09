@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문</title>
+
+<script type="text/javascript"> 
+/* 1. while 반복문 */
+	// 예제1
+	var value = 1;
+	
+	while(value < 5){
+		alert(value+'번째 반복');
+		value++;
+	}
+
+	// 예제2
+	var value = 0;
+	var startTime = new Date().getTime();
+	
+	while(new Date().getTime() < startTime+1000){
+		value++;
+	}
+	
+	alert(value); 
+
+
+/* 2. do~ while 반복문 */
+	var value = 1;
+
+	do{
+		alert(value+'번째 반복.');
+		value++;
+	}while(value <= 5);
+
+
+/* 3. for 반복문 */
+	var array = ['포도', '사과', '바나나', '망고'];
+	
+	for(var i=0; i < array.length; i++){
+		alert(array[i]);
+	}
+
+
+/* 4. for in 반복문 */
+	var array = ['포도', '사과', '바나나', '망고'];
+	for(var e in array){
+		alert(array[e]);
+	}
+
+
+/* 5. break 키워드 */
+	for(var i=0; true; i++){
+		alert(i+'번째 반복');
+		
+		if(!confirm('계속하시겠습니까?')){
+			break;
+		}
+	}
+
+
+/* 6. continue 키워드 */
+	for(var i=0; i < 5; i++){
+		continue;
+		alert(i+'번째 반복');
+	}
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

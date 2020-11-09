@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본내장객체</title>
+  
+<script type="text/javascript">
+/* - https://www.w3schools.com/jsref/default.asp */
+
+/* 1. Object 객체  
+// - toString() 메서드.
+// - 객체를 문자열로 변환할 때 자동으로 호출.
+	var object = new Object();
+  
+	alert(object);
+	alert(object.toString());
+
+// - toString() 메서드정의
+	var student = {
+		name:'홍길동',
+		grade:'고등학교 1학년',
+		toString:function(){
+			return this.name+':'+this.grade;
+		}
+	};
+
+	alert(student);
+*/
+
+/* 2. Number 객체 
+// - 생성 방법 2가지
+	var numberFromConstructor = new Number(273);
+	var numberFromLiteral = 273;
+	
+	//alert(typeof(numberFromConstructor)); // object
+	//alert(numberFromConstructor.toString()); // 273
+	
+	//alert(typeof(numberFromLiteral)); // number
+	//alert(numberFromLiteral.toString()); // 273
+	
+// - Number 생성자 함수의 속성
+//  .MAX_VALUE: 자바스크립트의 숫자가 나타낼 수 있는 최대 숫자.
+//  .MIN_VALUE:                      "                    최소 숫자.
+//  .NEGATIVE_INFINITY:음의 무한대 숫자.
+//  .POSITIVE_INFINITY:양의 무한대 숫자.
+//  .NaN: 자바스크립트 숫자로 나타낼 수 없는 숫자.
+	//alert(Number.MAX_VALUE);
+	
+//  .toString() : 진법값을 리턴
+//  .toFixed() : 고정 소수점 방식
+	var pi = new Number(Math.PI);
+	alert(pi+':'+pi.toFixed());
+*/
+
+/* 3. String 객체 
+	var stringFromLiteral = 'Hello World..!';
+	var stringFromConstructor = new String('Hello World..!');
+	
+	alert(typeof(stringFromLiteral)+' : '+typeof(stringFromConstructor));
+	
+// - length 속성:문자열 길이
+	alert(stringFromLiteral.length);
+	alert(stringFromConstructor.length);
+	
+	var characters = prompt('비밀번호를 입력하세요', '6글자 이상');
+	
+	if(characters.length < 6){
+		alert('6자 이상 입력하세요.');
+	}else{
+		alert('입력되었습니다.');
+	}
+ 
+// - 메서드 체이닝(Method Chaining)
+	var output = 'Hello JavaScript...!';
+	
+	//alert(output.toLowerCase());
+	//output = output.toLowerCase();
+	//alert(output.substring(0, 10));
+	//output = output.substring(0, 10);
+	
+	output = output.toLowerCase().substring(0, 10);
+	
+	alert(output);
+*/
+
+
+/* 4. Array 객체 
+// - Array 객체 생성 방법:4가지
+    var array1 = [52, 273, 103, 57, 32];
+    var array2 = new Array();
+    var array3 = new Array(10);
+    var array4 = new Array(52, 273, 103, 57, 32);
+*/
+
+/* 5. Date 객체 
+    var date = new Date();
+    alert(date);
+*/
+
+/* 6. Math 객체 
+// - 생성자 함수를 사용하지 않는 객체.
+    alert(Math.E);
+    alert(Math.LN2);
+
+
+// - 자바스크립트의 함수는 하나의 자료형이므로 변수에 저장 가능.
+// - 따라서 Math 객체의 메서드를 변수에 저장해서 함수처럼 쉽게 사용할 수 있음.
+    var findMax = Math.max;
+    
+    alert(findMax(52, 273, 103, 57));
+*/
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트</title>
+  
+<style type="text/css">
+	.exam { 
+		padding:10px;
+		border:1px solid black; 
+	}
+</style>
+  
+<script type="text/javascript">
+  
+// 1. window 객체의 load 이벤트 
+// - load : 이벤트 이름 or 이벤트 타입
+// - onload : 이벤트 속성
+// - 이벤트 핸들러 or 리스너 : 이벤트 속성에 할당된 함수.
+// - 이벤트 모델 : 문서 객체에 이벤트 연결하는 방법.
+// - 이벤트 연결: window 객체의 onload 속성에 함수 자료형을 할당하는 것.
+
+/* 	window.onload = function(){
+		var header = document.getElementById('header'); // 도큐먼트 객체
+		
+		// 이벤트 연결
+		function whenClick(){
+			alert('CLICK');
+		}
+		
+		header.onclick = whenClick;
+	}; */
+
+
+// 2. 고전 이벤트 모델 
+// - 이벤트 속성을 이용해 이벤트 연결.
+// - 자바스크립트에서 문서 객체의 이벤트 속성을 사용해 이벤트를 연결하는 방법.
+// - 이벤트 하나에 핸들러 하나만 연결할 수 있다.
+/* 	window.onload = function(){
+		var header = document.getElementById('header_2');
+		
+		// 이벤트 연결
+		function whenClick(){
+			alert('CLICK');
+			
+			header.onclick = null; // 이벤트 해제.
+		}
+		
+		header.onclick = whenClick;
+	}; */
+
+
+// 2.1 이벤트 발생 객체와 이벤트 객체 
+	
+/* 	window.onload = function(){
+		var buttonA = document.getElementById('button_a');
+		var buttonB = document.getElementById('button_b');
+		var counterA = document.getElementById('counter_a');
+		var counterB = document.getElementById('counter_b');
+		
+		buttonA.onclick = function(){
+			counterA.innerHTML = Number(counterA.innerHTML)+1;
+			counterA.style.color = 'orange';
+		};
+		
+		buttonB.onclick = function(){
+			counterB.innerHTML = Number(counterB.innerHTML)+1;
+		};
+		
+		document.getElementById('header').onclick = function(){
+			this.style.color = 'yellow';
+			this.style.backgroundColor = 'green';
+		};
+	}; */
+
+
+
+// 2.2 이벤트 객체 사용 
+// - 이벤트 객체 내용 출력하는 예제.
+//   . var event = e || window.event;
+//     - 짧은 조건문
+//     - e가 존재하면 e를 변수 event에 넣고, e가 undefined이면 window.event 속성을 변수 event에 넣음.
+//     - 인터넷익스플로러 8 이하 버전
+//       >> 이벤트가 발생시 이벤트 객체 window.event 속성으로 전달.
+//       >> 다른 브라우저는 이벤트핸들러의 매개 변수로 전달.
+/*     window.onload = function(){
+		document.body.onclick = function(e){
+			// 이벤트 객체를 설정
+			var event = e || window.event; 
+			
+			document.body.innerHTML = '';
+			for(var key in event){
+				document.body.innerHTML 
+						+= '<p>'+key+' : '+event[key]+'</p>';
+			}
+		};
+	}; */
+
+ 
+// 2.3 이벤트 강제 발생     
+/* 	window.onload = function(){
+		var buttonA = document.getElementById('button_a');
+		var buttonB = document.getElementById('button_b');
+		var counterA = document.getElementById('counter_a');
+		var counterB = document.getElementById('counter_b');
+		
+		buttonA.onclick = function(){
+			counterA.innerHTML = Number(counterA.innerHTML)+1;
+			counterA.style.color = 'orange';
+		};
+		
+		buttonB.onclick = function(){
+			counterB.innerHTML = Number(counterB.innerHTML)+1;
+			buttonA.onclick();//강제 이벤트 발생
+		};
+
+	}; */
+
+
+// 3. 인라인 이벤트 모델 
+// - HTML 페이지의 가장 기본적인 이벤트 연결 방법.
+/* 	function whenClick(event){
+		var alpha = 20;
+		alert(alpha);
+	} */
+
+
+
+// 4. 기본 이벤트 제거 
+// - 기본 이벤트
+//  . 일부 HTML 태그는 이미 이벤트 핸들러 가지고 있음.
+//  . 입력 양식의 경우 제거하는 방법
+/*     window.onload = function(){
+		// 이벤트 연결
+		var form = document.getElementById('my_form');
+		
+		form.onsubmit = function(){
+			var pass = document.getElementById('pass').value;
+			var pass_check = document.getElementById('pass_check').value;
+			
+			if(pass == pass_check){
+				alert('회원가입성공');
+			}else{
+				alert('비밀번호를 확인하세요....');
+				return false; // 이미 가지고 있는 이벤트 핸들러 제거됨.
+			}
+		};
+	}; */
+
+
+// 인라인 이벤트 모델의 이벤트 제거
+/*  	function whenSubmit(){
+		var pass = document.getElementById('pass').value;
+		var pass_check = document.getElementById('pass_check').value;
+		
+		if(pass == pass_check){
+			alert('회원가입성공');
+		}else{
+			alert('비밀번호를 확인하세요....');
+			return false; // 이미 가지고 있는 이벤트 핸들러 제거됨.
+		}
+	}  */
+
+
+/* 5. 이벤트 전달 */
+// - 이벤트 버블링 방식이 일반적
+//   . 자식노드에서 부모 노드 순으로 이벤트 실행.
+// - 이벤트 캡쳐링
+//   . 이벤트가 부모 노드에서 자식 노드 순으로 실행되는 것.
+
+/* 6. 이벤트 전달 막기 예제 */
+ 	window.onload = function(){
+		document.getElementById('header1').onclick = function(e){
+			alert('header');
+		};
+		
+		document.getElementById('paragraph1').onclick = function(e){
+			var event = e || window.event; // IE8 이하 버전...
+			alert('paragraph');
+			
+			// 이벤트 전달 제거
+			event.cancelBubble = true; // IE8 이하 버전...
+			if(event.stopPropagation){
+				event.stopPropagation();
+			}
+		};
+	}; 
+	
+</script>
+</head>
+
+<body>
+<!-- 1. 이벤트 정의 -->
+<h1 id="header">Click</h1>
+
+<!-- 2. 고전 이벤트 모델 실습 -->
+<h1>고전 이벤트 모델 실습</h1>
+	<h1 id="header_2">Click</h1>
+
+	<button id="button_a">ButtonA</button>
+	<button id="button_b">ButtonB</button>
+   
+	<h1>ButtonA - <span id="counter_a">0</span></h1>
+	<h1>ButtonB - <span id="counter_b">0</span></h1>
+
+	<hr/>
+
+<!-- 3. 인라인 이벤트 모델 실습 -->
+<h1>인라인 이벤트 모델 실습</h1>
+	<h1 onclick="alert('클릭')">InClick1</h1>
+	<h1 onclick="var alpha=10;alert(alpha);">InClick2</h1>
+	<h1 onclick="whenClick(event)">InClick3</h1>
+   
+	<hr/>
+	
+<!-- 4. 기본 이벤트 제거 실습 -->
+<h1>기본 이벤트 제거 실습</h1>
+	<h2>고전 이벤트 모델 이벤트 제거</h2>
+   
+	<form action="" id="my_form">
+		<label for="name">이름</label>
+		<input type="text" id="name"/><br/><br/>
+		<label for="pass">비밀번호</label>
+		<input type="password" id="pass"/><br/><br/>
+		<label for="pass_check">비밀번호 확인</label>
+		<input type="password" id="pass_check"/><br/><br/>
+		<input type="submit" value="전달"/>
+	</form>
+   
+	<!-- 인라인 이벤트 모델 이벤트 제거-->
+	<form onsubmit="return whenSubmit()">
+		<label for="name">이름</label>
+		<input type="text" id="name"/><br/><br/>
+		<label for="pass">비밀번호</label>
+		<input type="password" id="pass"/><br/><br/>
+		<label for="pass_check">비밀번호 확인</label>
+		<input type="password" id="pass_check"/><br/><br/>
+		<input type="submit" value="전달"/>
+	</form>
+
+	<hr/>
+
+<!-- 5. 이벤트 전달 실습 -->
+<h1>이벤트 전달 실습</h1>
+	<div onclick="alert('outer_div')" class="exam">
+		<div onclick="alert('inner_div')" class="exam">
+			<h1 onclick="alert('header')" class="exam">
+				<p onclick="alert('paragraph')" class="exam">Paragraph</p>
+			</h1>
+		</div>
+	</div>
+   
+	<hr/>
+   
+<!-- 6. 이벤트 전달 막기 실습 -->
+<h1>이벤트 전달 막기 실습</h1>
+	<h1 id="header1">
+		<p id="paragraph1">Paragraph</p>
+	</h1>
+</body>
+</html>

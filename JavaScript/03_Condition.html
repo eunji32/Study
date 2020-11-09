@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건문</title>
+
+<script type="text/javascript"> 
+
+/* 1. if 조건문 */
+/* 	var date = new Date();
+	var hour = date.getHours();
+	
+	if(hour < 11){
+		alert(hour+'시 : 아침 먹을 시간입니다.');
+	}else if(hour < 15){
+		alert(hour+'시 : 점심 먹을 시간입니다.');
+	}else{
+		alert(hour+'시 : 저녁 먹을 시간입니다.');
+	} */
+
+	
+/* 2. switch 조건문 */
+/* 	var input = Number(prompt('숫자를 입력하세요.', '숫자'));
+	
+	switch(input % 2){
+		case 0:
+			alert('짝수입니다.');
+			break;
+		case 1:
+			alert('홀수입니다.');
+			break;
+		default:
+			alert('숫자가 아닙니다.');
+			break
+	} */
+
+
+/* 3. 삼항 연산자 */
+/* 	var input = Number(prompt('숫자를 입력하세요.', '숫자'));
+	
+	(input > 0)? alert('양수입니다.'):alert('음수입니다.'); */
+	// r에서는 삼항연산자가 없지만, ifelse가 있음.
+
+
+/* 4. 짧은 조건문(cf. SCE) */
+	// 1. 논리합 연산자 표현식
+/* 	true || alert('실행될까요?...A'); // - 실행 안됨. : 앞이 true기 때문에 뒤를 실행할 필요없음.
+	false || alert('실행될까요?...B'); */
+	
+	// 2. 논리곱 연산자 표현식
+	var input = Number(prompt('숫자를 입력해 주세요.', '숫자'));
+	input%2 == 0 || alert('홀수입니다.');
+	input%2 == 0 && alert('짝수입니다.');
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

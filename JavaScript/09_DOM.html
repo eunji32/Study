@@ -1,0 +1,169 @@
+<!-- 
+	* 문서객체모델(DOM, Document Object Model)
+	  - 넓은 의미:웹브라우저가 HTML 페이지를 인식하는 방식.
+	  - 좁은 의미:document 객체와 관련된 객체의 집합.
+	  - HTML 페이지에 태그를 추가, 수정, 제거할 수 있음.
+	  - 기본적인 자바스크립트만으로 DOM을 다루기에는 너무 복잡하므로, 간단한 내용만 살펴보고 자세한 내용은 jQuery와 함께..
+
+	* DOM 관련 용어
+	  - 문서 객체:html or body 태그를 자바스크립트에서 이용할 수 있는 객체로 만들면 그것이 문서 객체.
+	  - 노드: 각 요소(head, body, title, script, h1, HEADER ...)
+		. 요소노드(Element Node):HTML 태그.
+		. 텍스트노드(Text Node) : 요소노드 안에 들어 있는 글자.
+	  - 정적으로 문서 객체를 생성한다의 의미
+		: 웹페이지가 처음 HTML 페이지에 적혀있는 태그들을 읽으며 생성하는 것.
+	  - 동적으로 문서 객체를 생성한다의 의미
+		: 자바스크립트를 사용해 원래 HTML 페이지에는 없는 문서 객체를 생성하는 것.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체모델</title>
+<script type="text/javascript">
+// 1. 용어 정의 
+/*  	window.onload = function(){
+		var header = document.getElementById('header_1');
+	};  */
+
+
+// 2. 문서 객체 생성1 
+/*   	window.onload = function(){
+		// 1. 문서 객체 생성
+		var header = document.createElement('h2');
+		var textNode = document.createTextNode('Hello DOM');
+		
+		// 2. 노드(요소/텍스트)를 연결.
+		header.appendChild(textNode);
+		
+		// 3. body 문서 객체에 header 문서 객체를 추가.
+		document.body.appendChild(header);
+	};  
+ */
+
+// 2. 문서 객체 생성2 
+// - 텍스트 노드 갖지 않는 노드 생성하는 방법.
+//  1)웹표준이 정의하거나 웹브라우저가 지원하는 태그의 속성에만 사용할 수 있다. 
+/*   	    window.onload = function(){
+			var img = document.createElement('img');
+			img.src = './images/dog.jpg';
+			img.width = 500;
+			
+			document.body.appendChild(img);
+		};   */
+ 
+
+//  2)웹브라우저가 지원하지 않는 속성
+/*   	    window.onload = function(){
+			var img = document.createElement('img');
+			img.setAttribute('src', './images/dog.jpg');
+			img.setAttribute('width', '500');
+			img.setAttribute('data-property', '350');
+			
+			document.body.appendChild(img);
+		}; */
+
+
+// 2. 문서 객체 생성3 
+// - 문서 객체의 innerHTML 속성 사용해 객체 생성.
+/*     window.onload = function(){
+		var output = '';
+		output += '<ul>';
+		output += '<li>JavaScript</li>';
+		output += '<li>jQuery</li>';
+		output += '<li>Ajax</li>';
+		output += '</ul>';
+		
+		document.body.innerHTML = output;
+		
+		document.body.innerHTML += '<h1>Document Object Model</h1>';
+	
+	}; */
+ 
+
+// 3. 문서 객체 가져오기1 
+// - 웹페이지에 이미 존재하는 HTML 태그를 자바스크립트로 가져오는 방법.
+// - getElementById() 메서드는 한 번에 한가지 문서 객체만 가져올 수 있다.
+/* 	window.onload = function(){
+		// 문서 객체를 가져옴.
+		var header1 = document.getElementById('header_1');
+		var header2 = document.getElementById('header_2');
+		
+		// 문서 객체의 속성을 변경.
+		header1.innerHTML = 'getElementById() - 1';
+		header2.innerHTML = 'Hello Javascript';
+	}; */
+
+	
+	
+// 3. 문서 객체 가져오기2 
+// - getElementsByTagName('tagName')
+//   : tagName과 일치하는 문서 객체를 배열로 가져옴.
+
+// - getElementsByName(name)
+//   : 태그의 name 속성이 name과 일치하는 문서 객체를 배열로 가져옴.
+
+// - getElementsByClassName('className')
+/* 	window.onload = function(){
+		var headers = document.getElementsByTagName('h1');
+		
+		headers[0].innerHTML = 'getElementsByTagName';
+		headers[1].innerHTML = 'TagName - h2';
+	}; */
+  
+
+// 4. 문서 객체의 스타일 조작
+/* 	window.onload = function(){
+		var header = document.getElementById('header_1');
+		
+		// 문서 객체의 스타일 조작.
+		header.style.border = '1px solid black';
+		header.style.color = 'orange';
+		header.style.backgroundColor = 'yellow';
+	}; */
+
+
+// 5. 문서 객체 제거 
+/* 	window.onload = function(){
+		var willRemove = document.getElementById('header_1'); */
+		
+// - 방법1 : body 문서 객체 바로 아래에 제거하고자 하는 문서객체가 있을 때 가능한 코드.
+/* 		document.body.removeChild(willRemove); */
+		
+// - 방법2 : 일반적으로 문서 객체를 제거 할 때 사용하는 코드.		
+/*  		var willRemove2 = document.getElementById('header_2');
+		willRemove2.parentNode.removeChild(willRemove2);
+	
+	};  */
+
+
+/* 6. 문서객체를 활용한 예제 */
+ 	window.onload = function(){
+		var clock = document.getElementById('clock');
+		
+		setInterval(function(){
+			var date = new Date();
+			clock.innerHTML = date.toString();
+		}, 1000);
+		
+	};
+
+</script>
+</head>
+<body>
+
+ 	<h1 id="header_1">HEADER-1</h1>
+
+	<img src="./images/dog2.jpg" />
+
+	<div>
+		<h1 id="header_2" class="" name="">HEADER-2</h1>
+	</div>
+
+	<h1 id="clock"></h1> 
+
+</body>
+</html>
+
+

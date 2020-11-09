@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+
+<script type="text/javascript"> 
+/* 1. 함수의 개요 */
+	// - 익명함수 : 이름을 가지고 있지 않은 함수.
+	// - 선언적 함수 : 이름을 가지고 있는 함수.
+ 
+/* 					
+	// 익명함수의 정의
+	var func = function(){
+						var output = Number(prompt('숫자를 입력하세요', '숫자'));
+						
+						alert(output);
+					};
+					
+	//func(); // 익명함수 호출 방법
+	//alert(func); // 호출됨
+	alert(prompt);//소스코드(x)
+	
+	// 선언적 함수의 정의
+	function move(){ alert('move() 함수 호출'); }
+	move(); 
+*/
+	
+//	2. 함수의 재정의 
+	// 1. 익명함수의 재정의
+//	func(); // error - 변수 선언 되기 전이라
+	
+/*
+	var func = function(){ alert('함수1'); }
+	func();
+	var func = function(){ alert('함수2'); }
+	func();
+	
+	// 2. 선언적 함수의 재정의
+	//    - 웹브라우저는 script 태그 내부의 내용을 한 줄 한 줄 읽기전에
+	//       선언적함수를 읽는다.
+	//    - 따라서 둘째줄 -> 셋째줄 -> 첫째줄 순서로 실행된다.
+	move();
+	
+	function move(){ alert('move() 함수1 호출'); }
+	function move(){ alert('move() 함수2 호출'); }
+	
+	move();
+*/
+
+
+/*	
+ 3. 매개변수와 리턴 값 
+	function f(x){ return x*x; }
+	alert(f(3));
+*/
+
+
+//4. 매개변수 
+	// - 두번째 매개변수는 무시한다.
+	//alert('원래 매개변수입니다.', '추가된 매개변수입니다.');
+	
+	// 두번째 매개변수는 undefined가 된다.
+	//var input = prompt('이름을 입력하세요.');
+	//alert(input);
+	
+/* 
+	// 매개변수 불일치 사용 예
+	//   - Array() 함수는 기본적으로 매개변수에 아무것도 입력하지 않게 
+	//     설계됨.	
+	var array1 = Array();// 빈 배열을 만듦.
+	var array2 = Array(10);// 매개변수만큼의 크기를 가지는 배열을 만듦.
+	var array3 = Array(25, 35, 45, 55);// 매개변수를 배열로 만듦.
+	
+	alert(array1+'\n'+array2+'\n'+array3);
+*/	
+
+//5. 가변 인자 함수 
+	// - 매개변수의 개수가 변할 수 있는 함수.
+	// - 자바스크립트는 매개 변수의 개수를 정의된 것과 다르게 사용해도
+	//    괜찮지만, 매개 변수 선언된 형태와 다르게 사용했을 때도 매개변수를
+	//    모두 활용하는 함수를 뜻함.
+	
+/* 
+	// 1. arguments 변수 사용 예제
+	function sumAll(){
+		alert(typeof(arguments)+' : '+arguments.length);
+		
+		for(var|in arguments){
+			alert(arguments[i]);
+		}
+	}
+	
+	sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+	// 2. 입력 매개 변수를 모두 더해 리턴하는 함수
+	function sumAll(){
+		var willReturn = 0;
+		
+		for(var i in arguments){
+			willReturn += arguments[i];
+		}
+		
+		return willReturn;
+	}
+	
+	alert(sumAll(1, 2, 3, 4, 5)); //15
+*/
+	
+/* 6. 리턴 값 
+	function returnTest(){
+		alert('문장A');
+		return;
+		alert('문장B');
+	}
+	
+	var value = returnTest();
+	alert(typeof(value)+' : '+value);
+*/
+
+
+/*
+ //7. 내부 함수 
+	// 1. 제곱을 구하는 함수
+	function square(x){
+		return x * x;
+	}
+	
+	// 피타고라스 함수
+	function pythagoras(width, height){
+		return Math.sqrt(square(width)+square(height));
+	}
+	alert(pythagoras(3, 4));
+
+	function square(width, height, hypoteunuse){
+		if((width*width)+(height*height) == hypoteunuse*hypoteunuse){
+			return true;
+		}else{
+			return false;
+		}
+	}	
+	alert(square(4, 7, 9));
+	
+	// 2. 내부 함수 사용 예제(해결 방법)
+	// 피타고라스 함수
+	function pythagoras(width, height){
+		function square(x){
+			return x * x;
+		}
+		
+		return Math.sqrt(square(width)+square(height));
+	}
+ */
+
+	
+/* 8. 함수를 매개 변수로 받는 함수 
+	// 1. 익명함수를 매개변수로 전달
+	function callFunctionTimes(otherFunction){
+		for(var i=0; i < 5; i++){
+			otherFunction();
+		}
+	}
+	
+	callFunctionTimes(function(){ alert('Hello JavaScript...'); }); 
+
+	// 2. 선언적 함수를 매개변수로 전달
+	function callFunctionTimes(otherFunction){
+		for(var i=0; i < 5; i++){
+			otherFunction();
+		}
+	}
+	
+	function justFunction(){
+		alert('Hello JavaScript...');
+	}
+	
+	callFunctionTimes(justFunction);
+*/	
+   
+/* 9. 함수를 리턴하는 함수와 클로저  
+	// 1. 익명함수를 리턴하는 함수
+	function outerFunction(){
+		return function(){alert('Hello JavaScript...');};
+	}
+
+	outerFunction()();
+
+	// 2. 오류코드 : 지역변수의 유효범위
+	function test(name){
+		var output = 'Hello '+name+'..!';
+		return output;
+	}
+	
+	//alert(test('홍길동'));
+	alert(output); // error
+
+	// 3. 클로저(Closure)
+	//    - 지역변수를 남겨두는 현상.
+	//    - 살아남은 지역변수 output.
+	//    - 리턴되는 함수 자체.
+
+	function outerFunction(name){
+		var output = 'Hello '+name+'..!';
+		return function(){return output;};
+	}
+	
+	var first = outerFunction('이순신');
+	alert(first());
+*/
+
+/* 10. 자바스크립트 내장 함수(1)
+// - 자바스크립트 자체적으로 제공하는 내장된 함수.
+//   ex) alert(), prompt(), confirm() 함수 등등...
+// - 인코딩/디코딩 관련 내장 함수
+//        ex) https://search.naver.com/search.naver?where=
+//              nexearch&sm=top_hty&fbm=1&ie=utf8&query=
+//              %EC%9E%90%EB%B0%94%EC%8A%A4%ED
+//              %81%AC%EB%A6%BD%ED%8A%B8(자바스크립트)
+// - escape()
+//   . 영문 알파벳, 숫자, 일부 특수문자(@, *, -, _, +, ., /)를 제외한 모든 문자를 인코딩한다.
+//   . 1바이트문자는 %XX의 형태로, 2바이트 문자는 %uXXXX의 형태로 변환한다.
+// - unescape()
+//
+// - encodeURI()
+//   .escape() 함수에서 인터넷 주소에 사용되는 일부 특수문자(:, ;, ?, =, &)는 변환하지 않는다.
+// - decodeURI()
+//
+// - encodeURIComponent()
+//   . 알파벳과 숫자를 제외한 모든 문자를 인코딩한다.
+//   . UTF-8 인코딩과 같다.
+// - decodeURIComponent()
+
+    // 인코딩할 URL을 만듭니다.
+    var URI = 'http://www.naver.com?test=한글입니다.';
+
+    // 출력할 문자열을 만듭니다.
+    var output = '';
+    output += '* escape()\n';
+    output += escape(URI) + '\n\n';
+    
+    output += '* encodeURI()\n';
+    output += encodeURI(URI) + '\n\n';
+    
+    output += '* encodeURIComponent()\n';
+    output += encodeURIComponent(URI) + '\n\n';
+
+    alert(output);
+*/
+/* 
+//11. 자바스크립트 내장 함수(2) 
+// 1. eval(string) : string을 자바스크립트로 실행.
+    var willEval = '';
+    willEval += 'var number = 10;';
+    willEval += 'alert(number);';
+    
+    //alert(willEval);
+    eval(willEval);
+
+
+// 2. isFinite(number)
+// - number가 무한한 값인지 확인한다.
+// - 자바스크립트는 0으로  숫자를 나누면 Infinity(변수)라는 값이 들어감.
+// 3. isNaN(number)
+// - number가 NaN(Not a Number:변수)인지 확인한다.
+// - 자바스크립트가 표현할 수 없는 숫자를 의미한다.
+	var num1 = 10/0;
+	var num2 = 10/'A';
+	alert(num1+' : '+num2);
+	alert(isFinite(num1)+' : '+isNaN(num2));
+
+    
+	var value = -10/0;
+	alert(value+' : '+isFinite(value));
+	
+	//if(value == Infinity){
+	if(isFinite(value) == false){
+		alert('value is Infinity');
+	}else{
+		alert('value is not Infinity');
+	}
+
+	// NaN 값의 비교 - NaN은 스스로를 비교할 수 없다.
+	var num3 = 10/'A';
+	alert(num3);
+	
+	//if(num3 == NaN){ // 무조건 false
+	if(isNaN(num3)){
+		alert('num3 is NaN');
+	}else{
+		alert('num3 is not NaN');
+	}
+*/
+	
+/* 4. Number() 함수
+	var won = Number('1000');
+	alert(typeof(won) + ' : '+ won);
+*/
+
+/* 5. parseInt() 함수 & parseFloat() 함수
+	var won = parseInt('1000원');
+	var dollor1 = parseInt('$1000');
+	
+	//alert(typeof(won)+' : '+won);
+	alert(typeof(dollor1)+' : '+dollor1);
+	
+	var dollor2 = parseFloat('10.5$');
+	alert(typeof(dollor2)+' : '+dollor2);
+*/
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

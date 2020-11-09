@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 기본 문법</title>
+
+<script type="text/javascript">
+	/* 여러개 사용가능. body영역에도 사용가능. */
+	
+	/* 1. 출력 */
+	// alert("Hello, JavaScript!!!..."); - 큰따옴표
+	//or
+	//alert('Hello, JavaScript!!!...'); - 작은따옴표
+	//or
+	/* alert('Hello, JavaScript!!!...') */ // ';'가 없어도 됨.
+	
+	/* 2. 문자열 자료형 - 이스케이프 문자 (자바와 동일) */
+	/* alert("Hello \"JavaScript!!!...\""); */
+	
+	/* 3. 변수 */
+	/* 자료형을 1개만 제공 */
+ 	var radius = 10; // 정수 
+	/* alert(radius); */
+	
+	var pi = 3.14; // 실수
+	/* alert(pi); */
+	
+	var varChar = 'A' // 문자
+	/* alert(varChar); */
+	
+	var booleanType = true; // boolean - 비교/논리연산자도 제공하고 있음.
+	/* alert(booleanType);  */
+	
+	var string = "Hello World..."; //문자열
+	/* alert(string); */
+	
+	/* alert(2*pi*radius); // 원의 둘레 */
+	
+	/* 4. 자료형 검사 */
+	// 문자열
+	var name = "홍길동";
+	/* alert(typeof(name)); // string */
+	
+	var num = 150;
+	/* alert(typeof(num)); //number */
+	
+	num = 3.14; 
+	/* alert(typeof(num)); //number */
+	
+	 num = true;
+	/* alert(typeof(num)); // boolean */
+	
+	/* alert(typeof(num)); */
+	
+	
+	/* 5. 입력 */
+/* 	var input = prompt('이름을 입력하세요.','두 글자 이상 입력');
+	alert(input +"님 반갑습니다."); */
+	
+	// boolean 입력 받을 때 사용하는 함수
+/* 	var check = confirm("수락하시겠습니까?");
+	
+	if(check){
+		alert("수락하셨군요."); //확인 - true
+	}else{
+		alert("거절하셨군요."); // 취소- false 
+	} */
+	
+	/* 6. 숫자와 문자열 자료형 변환 */
+	// 1. +연산자
+/* 	alert(52+273) //325 -number
+	alert('52'+'273')  //52273 -string
+	alert('52'+273)  //52273 -string
+	alert(52+'273');  //52273 -string */
+	
+	// 2. 덧셈을 제외한 사칙 연산 (자바와의 차이점)
+/* 	alert('52' * 3) // 156 - ''안에 있어도 숫자 자료형으로 변환해서 출력됨.
+	alert('52' - 3) //49
+	alert('52' / 3) //17.333333333333332
+	alert('52' % 3) //1 */
+	
+	/* alert("홍길동" - 2)	 */// NaN (Not a Number)
+	
+	// 3. 강제 자료형 변환
+	// - 다른 자료형 -> 숫자변환 : Number() 함수사용.
+	// - 다른 자료형 -> 문자열변환 : String() 함수사용.
+	
+/* 	var input = prompt("숫자를 입력하세요.", "숫자"); // 문자열로 출력.
+	var num = Number(input); // 숫자로 형변환.
+	alert(typeof(input) +" : "+ num + " : "+typeof(num))  */
+	 // input은 string / num은 number  자료형
+	// 숫자가 아닌 값 입력시 - NaN(Not a Number) 출력.
+
+	/* 7. undefined 자료형 */
+	// 1. 존재하지 않는 것을 표현하는 자료형
+	/* alert(typeof(variable));  */// undefiend
+	// 2. 변수를 선언했지만, 초기화 하지 않았을 때
+/* 	var variable;
+	alert(typeof(variable)); */ //undefiend
+	
+	/* 8. 산술 연산자 : +, -, *, /, %*/
+	alert(27/35); // 0.7714285714285715
+	// 자바는 몫만 출력. 그러나 r이나 이거는 모두 출력.
+	 
+	/* 9. 비교 연산자 : <, >, <=, >=, ==, != */
+	 alert(29 <=35); // true
+	 
+	/* 10. 논리 연산자 : &&, ||, ! */
+	alert(52 >135 && 45 <78); // false
+	 
+	/* 11. 복합 대입 연산 : +=, -=, ... */
+	 
+	/* 12. 증감 연산자 : ++, --*/
+	var number = 10;
+	alert(number++); // 10
+	alert(++number); // 11
+
+	/* 13. 일치 연산자 */
+	alert(273 == '273'); // true
+	// 자바스크립트만의 고유특성 
+	
+	// === : 양변의 자료형과 값이 일치.
+	// !==:  양변의 자료형과 값이 다름.
+	alert(273==='273'); // false
+	
+	/* 14.  배열 */
+	var array = [123,"string",true, function(){}, {}, [150,170]];
+	// 동일자료형이여야 된다는 조건이 붙지 않음.
+	alert(array[0]); // 인덱스로 접근, 0부터 시작, 따라서 array[0]은 123
+	
+	for(var i=0; i<array.length; i++){
+		alert(array[i])
+	}
+	
+	
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>
